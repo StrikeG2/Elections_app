@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import com.example.elections_app.HeaderFragment;
+import com.example.elections_app.CirconscriptionFragment;
+import com.example.elections_app.CentreVoteFragment;
+import com.example.elections_app.BureauVoteFragment;
 
 public class MainActivity extends AppCompatActivity implements HeaderFragment.OnTabSelectedListener {
 

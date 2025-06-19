@@ -30,7 +30,7 @@ public class HeaderFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_header, container, false);
+        View view = inflater.inflate(R.layout.header_page, container, false);
 
         tabs = new LinearLayout[3];
         tabs[0] = view.findViewById(R.id.tab_circonscription);

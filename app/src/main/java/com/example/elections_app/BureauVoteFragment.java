@@ -15,7 +15,7 @@ public class BureauVoteFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_bureau_vote, container, false);
+        View view = inflater.inflate(R.layout.bureau_vote, container, false);
 
         // Logique pour le bureau de vote
 

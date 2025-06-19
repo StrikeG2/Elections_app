@@ -34,7 +34,7 @@ public class ValidationResultatFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ValidationResultatsFragment.
+     * @return A new instance of fragment ValidationResultatFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static ValidationResultatFragment newInstance(String param1, String param2) {
@@ -59,6 +59,6 @@ public class ValidationResultatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_validation_resultats, container, false);
+        return inflater.inflate(R.layout.validation_resultats_page, container, false);
     }
 }

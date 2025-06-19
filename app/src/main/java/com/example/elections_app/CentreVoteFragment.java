@@ -15,7 +15,7 @@ public class CentreVoteFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_centre_vote, container, false);
+        View view = inflater.inflate(R.layout.centre_vote_page, container, false);
 
         // Logique pour le centre de vote
 
