@@ -34,7 +34,11 @@ public class ValidationResultatFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
+<<<<<<< HEAD
      * @return A new instance of fragment ValidationResultatFragment.
+=======
+     * @return A new instance of fragment ValidationResultatsFragment.
+>>>>>>> 85a638b202ba7994235a755370c659d595338fa9
      */
     // TODO: Rename and change types and number of parameters
     public static ValidationResultatFragment newInstance(String param1, String param2) {

@@ -61,6 +61,4 @@ public class GestionObjetsFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.gestion_objets_page, container, false);
     }
-
-
 }
