@@ -2,53 +2,52 @@ package com.example.elections_app;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import com.example.elections_app.HeaderFragment;
-import com.example.elections_app.CirconscriptionFragment;
-import com.example.elections_app.CentreVoteFragment;
-import com.example.elections_app.BureauVoteFragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import com.example.elections_app.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements HeaderFragment.OnTabSelectedListener {
+public class MainActivity extends AppCompatActivity {
+    private AppBarConfiguration appBarConfiguration;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        // Charger le fragment header
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.header_container, new HeaderFragment())
-                    .commit();
+        // Initialisation du view binding
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-            // Charger le fragment de circonscription par défaut
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.content_container, new CirconscriptionFragment())
-                    .commit();
-        }
+        // Configuration de la barre d'outils
+        setSupportActionBar(binding.topAppBar);
+
+        // Configuration de la navigation
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+        // Définir les destinations de niveau supérieur
+        appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.circonscriptionFragment,
+                R.id.centreVoteFragment,
+                R.id.bureauVoteFragment,
+                R.id.gestionObjetsFragment,
+                R.id.saisieResultatFragment,
+                R.id.validationResultatsFragment)
+                .setOpenableLayout(binding.drawerLayout)
+                .build();
+
+        // Configurer l'ActionBar avec NavController
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+        // Configurer la NavigationView avec NavController
+        NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
     @Override
-    public void onTabSelected(int position) {
-        Fragment fragment;
-        switch (position) {
-            case 0:
-                fragment = new CirconscriptionFragment();
-                break;
-            case 1:
-                fragment = new CentreVoteFragment();
-                break;
-            case 2:
-                fragment = new BureauVoteFragment();
-                break;
-            default:
-                fragment = new CirconscriptionFragment();
-        }
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.content_container, fragment)
-                .commit();
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
+                || super.onSupportNavigateUp();
     }
 }

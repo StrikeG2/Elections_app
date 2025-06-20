@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".HeaderFragment">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <!-- Barre de titre -->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="#1565C0"
         android:elevation="4dp">
 
-        <!-- Menu hamburger à gauche -->
         <ImageButton
             android:id="@+id/btn_menu"
             android:layout_width="48dp"
@@ -26,20 +26,15 @@
             android:padding="12dp"
             app:tint="@android:color/white" />
 
-        <!-- Titre au centre -->
         <TextView
             android:id="@+id/tv_header_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Saisie des Résultats"
+            android:text="Application de Vote"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="normal"
-            android:maxLines="1"
-            android:ellipsize="end" />
+            android:textSize="20sp" />
 
-        <!-- Bouton optionnel à droite (ex: paramètres) -->
         <ImageButton
             android:id="@+id/btn_settings"
             android:layout_width="48dp"
@@ -53,7 +48,61 @@
             android:padding="12dp"
             android:visibility="gone"
             app:tint="@android:color/white" />
-
     </RelativeLayout>
 
-</FrameLayout>
+    <!-- Onglets de navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="#E3F2FD">
+
+        <LinearLayout
+            android:id="@+id/tab_circonscription"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Circonscription"
+                android:textColor="#0D47A1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_centre_vote"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Centre de Vote"
+                android:textColor="#0D47A1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_bureau_vote"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bureau de Vote"
+                android:textColor="#0D47A1"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
