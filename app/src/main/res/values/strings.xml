@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Gestion Électorale</string>
+    <string name="app_name">Result241</string>
     <string name="circonscription">Circonscription</string>
     <string name="centre_vote">Centre de Vote</string>
     <string name="bureau_vote">Bureau de Vote</string>
@@ -16,4 +16,19 @@
     <string name="bureau_de_vote">Bureau de Vote</string>
     <string name="centre_de_vote">Centre de Vote</string>
     <string name="gestion_lectorale">Gestion Électorale</string>
+    <string name="app_logo">Logo de l\'application Result241</string>
+    <string name="login_title">Connexion</string>
+    <string name="login_subtitle">Accédez à votre espace électoral</string>
+    <string name="email_label">Adresse email</string>
+    <string name="password_label">Mot de passe</string>
+    <string name="login_button">Se connecter</string>
+    <string name="admin_info">Utilisez admin@test.com pour l\'interface administrateur</string>
+    <string name="email_hint">votre.email@example.com</string>
+    <string name="password_hint">••••••••</string>
+    <string name="field_required">Ce champ est requis</string>
+    <string name="invalid_email">Cette adresse email n\'est pas valide</string>
+    <string name="password_too_short">Le mot de passe est trop court</string>
+    <string name="login_success">Connexion réussie!</string>
+    <string name="login_failed">Email ou mot de passe incorrect</string>
+    <string name="admin_credentials_filled">Identifiants admin remplis</string>
 </resources>

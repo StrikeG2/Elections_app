@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bureauVoteFragment">
+
+    <fragment
+        android:id="@+id/bureauVoteFragment"
+        android:name="com.example.elections_app.BureauVoteFragment"
+        android:label="Bureau de Vote"
+        tools:layout="@layout/fragment_bureau_vote">
+
+        <action
+            android:id="@+id/action_bureauVote_to_gestionObjets"
+            app:destination="@id/gestionObjetsFragment" />
+
+        <action
+            android:id="@+id/action_bureauVote_to_centreVote"
+            app:destination="@id/centreVoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/centreVoteFragment"
+        android:name="com.example.elections_app.CentreVoteFragment"
+        android:label="Centre de Vote"
+        tools:layout="@layout/fragment_centre_vote">
+
+        <action
+            android:id="@+id/action_centreVote_to_bureauVote"
+            app:destination="@id/bureauVoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/circonscriptionFragment"
+        android:name="com.example.elections_app.CirconscriptionFragment"
+        android:label="Circonscription"
+        tools:layout="@layout/fragment_circonscription"/>
+
+    <fragment
+        android:id="@+id/gestionObjetsFragment"
+        android:name="com.example.elections_app.GestionObjetsFragment"
+        android:label="Gestion des Objets"
+        tools:layout="@layout/fragment_gestion_objets"/>
+
+    <fragment
+        android:id="@+id/saisieResultatFragment"
+        android:name="com.example.elections_app.SaisieResultatFragment"
+        android:label="Saisie des Résultats"
+        tools:layout="@layout/fragment_saisie_resultat"/>
+
+    <fragment
+        android:id="@+id/validationResultatsFragment"
+        android:name="com.example.elections_app.ValidationResultatFragment"
+        android:label="Validation des Résultats"
+        tools:layout="@layout/fragment_validation_resultats"/>
+</navigation>

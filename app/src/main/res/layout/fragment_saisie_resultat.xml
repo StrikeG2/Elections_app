@@ -1,98 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     android:background="@color/white"
-    android:paddingHorizontal="24dp"
     tools:context=".SaisieResultatFragment">
 
-    <TextView
+    <include layout="@layout/fragment_header"/>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Saisie des Résultats"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="24dp"/>
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/bg_rounded_white"
-        android:padding="24dp"
-        android:elevation="2dp">
-
-        <!-- Spinner Candidat - Corrigé -->
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="Candidat"
-            app:boxStrokeColor="@color/green"
-            android:contentDescription="Menu déroulant pour sélectionner un candidat"
-            tools:ignore="SpeakableTextPresentCheck">
+            android:orientation="vertical"
+            android:background="@drawable/bg_rounded_white"
+            android:padding="24dp"
+            android:elevation="2dp">
 
-            <AutoCompleteTextView
-                android:id="@+id/spinner1"
+            <!-- Spinner Candidat - Corrigé -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none"
-                android:text="Sélectionner un Candidat"/><!-- Prévisualisation dans Android Studio -->
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginBottom="16dp"
+                android:hint="Candidat"
+                app:boxStrokeColor="@color/green"
+                android:contentDescription="Menu déroulant pour sélectionner un candidat"
+                tools:ignore="SpeakableTextPresentCheck">
 
-        <!-- Champ Nombre de voix -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="Nombre de voix"
-            app:boxStrokeColor="@color/green"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/ic_arrows_selector">
+                <AutoCompleteTextView
+                    android:id="@+id/spinner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="Sélectionner un Candidat"/><!-- Prévisualisation dans Android Studio -->
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/etQuantity"
+            <!-- Champ Nombre de voix -->
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="0"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginBottom="16dp"
+                android:hint="Nombre de voix"
+                app:boxStrokeColor="@color/green"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_arrows_selector">
 
-        <!-- Spinner Bureau - Corrigé -->
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:hint="Bureau de vote"
-            app:boxStrokeColor="@color/green"
-            android:contentDescription="Menu déroulant pour sélectionner un bureau de vote"
-            tools:ignore="SpeakableTextPresentCheck">
+                <EditText
+                    android:id="@+id/etQuantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="0"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <AutoCompleteTextView
-                android:id="@+id/spinner2"
+            <!-- Spinner Bureau - Corrigé -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none"
-                android:text="Sélectionner un bureau" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginBottom="24dp"
+                android:hint="Bureau de vote"
+                app:boxStrokeColor="@color/green"
+                android:contentDescription="Menu déroulant pour sélectionner un bureau de vote"
+                tools:ignore="SpeakableTextPresentCheck">
 
-        <!-- Bouton Valider -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:text="Valider"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/green"
-            app:cornerRadius="8dp"/>
-    </LinearLayout>
-</FrameLayout>
+                <AutoCompleteTextView
+                    android:id="@+id/spinner2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="Sélectionner un bureau" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Bouton Valider -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Valider"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/green"
+                app:cornerRadius="8dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

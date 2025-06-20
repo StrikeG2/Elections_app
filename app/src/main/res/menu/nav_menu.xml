@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/bureauVoteFragment"
+            android:title="Bureau de Vote" />
+
+        <item
+            android:id="@+id/centreVoteFragment"
+            android:title="Centre de Vote" />
+
+        <item
+            android:id="@+id/circonscriptionFragment"
+            android:title="Circonscription" />
+
+        <item
+            android:id="@+id/gestionObjetsFragment"
+            android:title="Gestion des Objets" />
+
+        <item
+            android:id="@+id/saisieResultatFragment"
+            android:title="Saisie des Résultats" />
+
+        <item
+            android:id="@+id/validationResultatsFragment"
+            android:title="Validation des Résultats" />
+    </group>
+</menu>
